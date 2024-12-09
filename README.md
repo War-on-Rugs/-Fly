@@ -1,2 +1,6 @@
 # -Fly
 Erc20
+arb 0x50A88E22fBcC9b5B313496C41dfFBF78A0729465
+base
+eth
+pol
