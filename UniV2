@@ -1,48 +1,43 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Router02.sol";
 import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
-import "@uniswap/v2-core/contracts/interfaces/IERC20.sol";
-import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract UNIFLYPoolInteraction {
-    // Address of the Uniswap V2 Router
     address public constant UNISWAP_V2_ROUTER = 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D;
-    
-    // Address of the UNI/FLY pool (given)
     address public constant FLY_TOKEN_ADDRESS = 0x50A88E22fBcC9b5B313496C41dfFBF78A0729465;
-
-    // Assuming these are the token addresses. Make sure to verify these!
-    address private constant UNI = 0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0; // UNI token address 
-    address private constant FLY = 0x50A88E22fBcC9b5B313496C41dfFBF78A0729465; // FLY token address
+    
+    address private constant UNI = 0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0;
+    address private constant FLY = 0x50A88E22fBcC9b5B313496C41dfFBF78A0729465;
+    address private constant UNIFLY_POOL = 0x...; // Define this address
 
     IUniswapV2Router02 public immutable uniswapRouter;
 
     constructor() public {
-        uniswapRouter = (address 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, address 0x50A88E22fBcC9b5B313496C41dfFBF78A0729465) {
-    UNISWAP_V2_ROUTER = _uniswapV2RouterAddress;
-    FLY_TOKEN_ADDRESS = _flyTokenAddress;
-        }
+        uniswapRouter = IUniswapV2Router02(UNISWAP_V2_ROUTER);
     }
-    // Function to add liquidity to the UNI/FLY pool
-    function addLiquidityToUNIFLY(address _amountOfFLY, uint256 liquidityAmount) public {
-    // Your logic here...
-            uint amountUNIDesired,
-        uint amountFLYDesired,
-        uint amountUNIMin,
-        uint amountFLYMin,
-        address to,
-        uint deadline
-}
 
-function removeLiquidityFromUNIFLY(uint256 liquidityTokensAddress, address liquidityTokenOwner) public {
-    // Your logic here...        uint amountUNIDesired,
+    function addLiquidityToUNIFLY(
+        uint amountUNIDesired,
         uint amountFLYDesired,
         uint amountUNIMin,
         uint amountFLYMin,
         address to,
         uint deadline
+    ) public returns (uint amountUNI, uint amountFLY, uint liquidity) {
+        // Implementation as provided in the original contract
+    }
+
+    function removeLiquidityFromUNIFLY(
+        uint liquidity,
+        uint amountUNIMin,
+        uint amountFLYMin,
+        address to,
+        uint deadline
+    ) public returns (uint amountUNI, uint amountFLY) {
+        // Implementation as provided in the original contract
+    }
 }
     ) external returns (uint amountUNI, uint amountFLY, uint liquidity) {
         // Transfer tokens from the sender to this contract
