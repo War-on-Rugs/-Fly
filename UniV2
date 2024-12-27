@@ -1,45 +1,50 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
+import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
 import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract UNIFLYPoolInteraction {
+contract UNIFLYPoolLauncher is ReentrancyGuard {
+
+    address public constant UNISWAP_V2_FACTORY = 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f;
     address public constant UNISWAP_V2_ROUTER = 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D;
-    address public constant FLY_TOKEN_ADDRESS = 0xB38d44c98e001195c017F6EF7645b5737579080f;
     
-    address private constant UNI = 0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0;
-    address private constant FLY = 0xB38d44c98e001195c017F6EF7645b5737579080f;
-    address private constant UNIFLY_POOL = 0x...; // Define this address
+    address public constant UNI = 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984; // UNI token address on mainnet
+    address public constant FLY = 0xB38d44c98e001195c017F6EF7645b5737579080f; // FLY token address (hypothetical)
 
     IUniswapV2Router02 public immutable uniswapRouter;
+    IUniswapV2Factory public immutable uniswapFactory;
 
-    constructor() public {
+    constructor() {
         uniswapRouter = IUniswapV2Router02(UNISWAP_V2_ROUTER);
+        uniswapFactory = IUniswapV2Factory(UNISWAP_V2_FACTORY);
     }
 
-    function addLiquidityToUNIFLY(
+    /**
+     * @dev Creates a new UNI/FLY pair on Uniswap V2 if it doesn't exist, then adds liquidity to it.
+     * @param amountUNIDesired Amount of UNI tokens to add to the pool.
+     * @param amountFLYDesired Amount of FLY tokens to add to the pool.
+     * @param amountUNIMin Minimum amount of UNI tokens to add, protects against slippage.
+     * @param amountFLYMin Minimum amount of FLY tokens to add, protects against slippage.
+     * @param to Address where liquidity tokens will be sent.
+     * @param deadline Timestamp after which this transaction will revert if not completed.
+     */
+    function launchAndAddLiquidity(
         uint amountUNIDesired,
         uint amountFLYDesired,
         uint amountUNIMin,
         uint amountFLYMin,
         address to,
         uint deadline
-    ) public returns (uint amountUNI, uint amountFLY, uint liquidity) {
-        // Implementation as provided in the original contract
-    }
+    ) external nonReentrant returns (address pair, uint amountUNI, uint amountFLY, uint liquidity) {
+        // Ensure the pair exists, if not, create it
+        pair = uniswapFactory.getPair(UNI, FLY);
+        if (pair == address(0)) {
+            pair = uniswapFactory.createPair(UNI, FLY);
+        }
 
-    function removeLiquidityFromUNIFLY(
-        uint liquidity,
-        uint amountUNIMin,
-        uint amountFLYMin,
-        address to,
-        uint deadline
-    ) public returns (uint amountUNI, uint amountFLY) {
-        // Implementation as provided in the original contract
-    }
-}
-    ) external returns (uint amountUNI, uint amountFLY, uint liquidity) {
         // Transfer tokens from the sender to this contract
         require(IERC20(UNI).transferFrom(msg.sender, address(this), amountUNIDesired), "Transfer from failed for UNI");
         require(IERC20(FLY).transferFrom(msg.sender, address(this), amountFLYDesired), "Transfer from failed for FLY");
@@ -63,33 +68,10 @@ contract UNIFLYPoolInteraction {
         // Return any excess tokens to the sender
         uint excessUNI = amountUNIDesired - amountUNI;
         uint excessFLY = amountFLYDesired - amountFLY;
-        if (excessUNI > 0) IERC20(UNI).transfer(msg.sender, excessUNI);
-        if (excessFLY > 0) IERC20(FLY).transfer(msg.sender, excessFLY);
-    }
+        if (excessUNI > 0) require(IERC20(UNI).transfer(msg.sender, excessUNI), "Excess UNI transfer failed");
+        if (excessFLY > 0) require(IERC20(FLY).transfer(msg.sender, excessFLY), "Excess FLY transfer failed");
 
-    // Function to remove liquidity from the UNI/FLY pool
-    function removeLiquidityFromUNIFLY(
-        uint liquidity,
-        uint amountUNIMin,
-        uint amountFLYMin,
-        address to,
-        uint deadline
-    ) external returns (uint amountUNI, uint amountFLY) {
-        // Transfer liquidity tokens from sender to this contract
-        IERC20(UNIFLY_POOL).transferFrom(msg.sender, address(this), liquidity);
-
-        // Approve router to spend liquidity tokens
-        IERC20(UNIFLY_POOL).approve(UNISWAP_V2_ROUTER, liquidity);
-
-        // Remove liquidity
-        (amountUNI, amountFLY) = uniswapRouter.removeLiquidity(
-            UNI,
-            FLY,
-            liquidity,
-            amountUNIMin,
-            amountFLYMin,
-            to,
-            deadline
-        );
+        // Return the pair address for further interaction
+        return (pair, amountUNI, amountFLY, liquidity);
     }
 }
