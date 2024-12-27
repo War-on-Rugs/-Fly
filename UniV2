@@ -6,10 +6,10 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract UNIFLYPoolInteraction {
     address public constant UNISWAP_V2_ROUTER = 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D;
-    address public constant FLY_TOKEN_ADDRESS = 0x50A88E22fBcC9b5B313496C41dfFBF78A0729465;
+    address public constant FLY_TOKEN_ADDRESS = 0xB38d44c98e001195c017F6EF7645b5737579080f;
     
     address private constant UNI = 0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0;
-    address private constant FLY = 0x50A88E22fBcC9b5B313496C41dfFBF78A0729465;
+    address private constant FLY = 0xB38d44c98e001195c017F6EF7645b5737579080f;
     address private constant UNIFLY_POOL = 0x...; // Define this address
 
     IUniswapV2Router02 public immutable uniswapRouter;
