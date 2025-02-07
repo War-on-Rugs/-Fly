@@ -1,0 +1,113 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import {BaseHook} from "@uniswap/v4-periphery/BaseHook.sol";
+import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
+import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
+import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+interface IYieldAggregator {
+    function deposit(uint256 amount, address token) external returns (bool);
+    function withdraw(uint256 amount, address token) external returns (bool);
+}
+
+contract LiquidityAndYieldManagerHook is BaseHook {
+    
+    // Address of the yield aggregator contract
+    address public immutable yieldAggregator;
+    
+    // Mapping to track the largest holder for each pool (token pair)
+    mapping(bytes32 => address) private largestHolders;
+
+    // Events for transparency and external monitoring
+    event LiquidityWithdrawn(bytes32 poolId, uint256 amount, address token);
+    event LiquidityDeposited(bytes32 poolId, uint256 amount, address token);
+
+    constructor(IPoolManager _poolManager, address _yieldAggregator) BaseHook(_poolManager) {
+        yieldAggregator = _yieldAggregator;
+    }
+
+    function getHooksCalls() public pure override returns (Hooks.Calls memory) {
+        return Hooks.Calls({
+            beforeInitialize: false,
+            afterInitialize: false,
+            beforeModifyPosition: true,
+            afterModifyPosition: false,
+            beforeSwap: true,
+            afterSwap: true,
+            beforeDonate: false,
+            afterDonate: false
+        });
+    }
+
+    // Helper function to get a unique identifier for each pool
+    function getPoolId(PoolKey calldata key) internal pure returns (bytes32) {
+        return keccak256(abi.encode(key.token0, key.token1));
+    }
+
+    // Function to update largest holder, should be called by some governance or external trigger
+    function updateLargestHolder(PoolKey calldata key, address newLargestHolder) external {
+        bytes32 poolId = getPoolId(key);
+        largestHolders[poolId] = newLargestHolder;
+    }
+
+    function calculateRequiredLiquidity(PoolKey calldata key, address largestHolder) internal view returns (uint256) {
+        // Simplified - you'd need price oracles for accurate calculation
+        uint256 balance = poolManager.balanceOf(largestHolder, key.token0); // Assuming token0 for simplicity
+        return balance * 2; // 2x for safety margin
+    }
+
+    function beforeSwap(
+        address sender,
+        PoolKey calldata key,
+        IPoolManager.SwapParams calldata params
+    ) external override poolManagerOnly returns (bytes4) {
+        bytes32 poolId = getPoolId(key);
+        address largestHolder = largestHolders[poolId];
+        if (largestHolder == address(0)) {
+            // Handle case where largest holder isn't set
+            return this.beforeSwap.selector;
+        }
+
+        uint256 requiredLiquidity = calculateRequiredLiquidity(key, largestHolder);
+        uint256 currentLiquidity = poolManager.liquidity(key);
+
+        if (currentLiquidity < requiredLiquidity) {
+            uint256 toAdd = requiredLiquidity - currentLiquidity;
+            if (!withdrawFromYieldAggregator(toAdd, key.token0)) {
+                revert("Failed to withdraw liquidity from yield aggregator");
+            }
+            emit LiquidityWithdrawn(poolId, toAdd, key.token0);
+        }
+
+        return this.beforeSwap.selector;
+    }
+
+    function afterSwap(
+        address sender,
+        PoolKey calldata key,
+        IPoolManager.SwapParams calldata,
+        IPoolManager.SwapResponse memory response
+    ) external override poolManagerOnly returns (bytes4) {
+        bytes32 poolId = getPoolId(key);
+        uint256 excessLiquidity = poolManager.liquidity(key) - calculateRequiredLiquidity(key, largestHolders[poolId]);
+        if (excessLiquidity > 0) {
+            if (!depositToYieldAggregator(excessLiquidity, key.token0)) {
+                revert("Failed to deposit liquidity to yield aggregator");
+            }
+            emit LiquidityDeposited(poolId, excessLiquidity, key.token0);
+        }
+        return this.afterSwap.selector;
+    }
+
+    function withdrawFromYieldAggregator(uint256 amount, address token) internal returns (bool) {
+        IERC20(token).approve(yieldAggregator, amount);
+        return IYieldAggregator(yieldAggregator).withdraw(amount, token);
+    }
+
+    function depositToYieldAggregator(uint256 amount, address token) internal returns (bool) {
+        IERC20(token).approve(yieldAggregator, amount);
+        return IYieldAggregator(yieldAggregator).deposit(amount, token);
+    }
+}
