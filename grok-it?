@@ -19,6 +19,7 @@ src/PoolManager.sol: The main contract for managing Uniswap v4 pools.
 test/libraries/Position.t.sol, Pool.t.sol: Test files for the respective libraries, written in Solidity for testing with frameworks like Foundry.
 LehmanAgreementBootstrappingPool
 This section seems to reference a set of contracts related to a protocol token version of v3Compound, likely a collateralized or bridged asset and other components like Configurator, Comet Factory, Rewards, Bulker, Governor, Timelock, and integrations with Aave (AaveV3USD, AaveDebt) and Uniswap v2 (UniV2-lp). These suggest a complex DeFi ecosystem with governance, lending, and liquidity provisioning.
+
 Key Contracts:
 cbUSDCv3 and its implementation/extension: Likely a tokenized asset for lending/borrowing.
 Configurator and Proxy Admin: Used for managing upgradable contracts.
@@ -32,7 +33,6 @@ erc20: Standard ERC20 token contracts used within the protocol.
 
 Analysis of LiquidityAndYieldManagerHook
 This is a custom Uniswap v4 hook contract that integrates with a yield aggregator to dynamically manage liquidity in Uniswap v4 pools based on the largest holder’s balance. Below is a breakdown of its functionality:
-Overview
 Purpose: The contract manages liquidity by withdrawing from or depositing to a yield aggregator (e.g., Aave, Compound) based on pool requirements. It ensures sufficient liquidity for swaps by monitoring the largest holder’s balance in a pool.
 Inheritance: Extends BaseHook from Uniswap v4’s periphery, interacting with the PoolManager.
 Interfaces:
