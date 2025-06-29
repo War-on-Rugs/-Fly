@@ -6,6 +6,11 @@ take
 settle
 mint
 burn
+{before,after}Initialize
+{before,after}AddLiquidity
+{before,after}RemoveLiquidity
+{before,after}Swap
+{before,after}Donate
 
 Core Logic:
 getPoolId: Generates a unique bytes32 pool ID using keccak256 on token0 and token1.
@@ -20,12 +25,6 @@ If excess exists, deposits it to the yield aggregator and emits LiquidityDeposit
 withdrawFromYieldAggregator / depositToYieldAggregator:
 Handles token approvals and interactions with the yield aggregator.
 
-{before,after}Initialize
-{before,after}AddLiquidity
-{before,after}RemoveLiquidity
-{before,after}Swap
-{before,after}Donate
-_
 src/
 ----interfaces/
     | IPoolManager.sol
@@ -69,7 +68,7 @@ Error Handling: The contract reverts if yield aggregator operations fail, which 
 Governance: The updateLargestHolder function is not restricted (e.g., no onlyOwner or governance check), which could be a security risk.
 Token Assumptions: The contract assumes key.token0 for liquidity calculations, ignoring token1. This may not work for all pool configurations.
 Gas Optimization: Repeated calls to poolManager.liquidity and poolManager.balanceOf could be cached to save gas.
-Suggestions for Improvement
+***Suggestions for Improvement***
 Add Access Control: Restrict updateLargestHolder to a governance contract or owner.
 Refine Liquidity Calculation: Use price oracles (e.g., Chainlink) or pool reserves to calculate required liquidity more accurately.
 Support Both Tokens: Handle both token0 and token1 in liquidity calculations to support all pool types.
@@ -87,10 +86,13 @@ import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.s
 import {IUnlockCallback} from 'v4-core/contracts/interfaces/callback/IUnlockCallback.sol';
 import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
+import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-interface IYieldAggregator {
+interface IYieldAggregator { LehmanAgreementBootstrappingPool_
     function deposit(uint256 amount, address token) external returns (bool);
-    function withdraw(uint256 amount, address token) external returns (bool);
+    function withdraw(uint256 amount, address $⨎₤¥) external returns (bool);
 }
 
 contract LiquidityAndYieldManagerHook is BaseHook {
