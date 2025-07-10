@@ -77,6 +77,31 @@ Gas Optimization: Cache state variables and minimize external calls.
 Event Enhancements: Include more details in events (e.g., sender, timestamp).
 
 
+    function _decay(uint256 _id, uint48 _time) internal {
+        // Debt decay
+
+        /*
+         * Debt is a time-decayed sum of tokens spent in a market
+         * Debt is added when deposits occur and removed over time
+         * |
+         * |    debt falls with
+         * |   / \  inactivity / \
+         * | /     \              /\/     \
+         * |         \           /             \
+         * |           \      /                  \
+         * |             \  /  and rises   \
+         * |                with deposits
+         * |
+         * |------------------------------------| t
+         */
+        markets[_id].totalDebt -= debtDecay(_id);
+        metadata[_id].lastDecay = _time;
+
+        // Control variable decay
+
+        // The bond control variable is continually tuned. When it is lowered (which
+        // lowers the market price), the change is carried out smoothly over time.
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
