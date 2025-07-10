@@ -7,25 +7,25 @@ $⨎₤¥ between assets seamlessly with background liquidity being backed by as
 
 WhiteSandsDao -crypto platform “Pursuing the acquisitions of funds” positive apy Delta neutral liquidity pools Stable borrow rate Blue chip offerings*
 $⨎₤¥ one quadrillion two hundred thirty-four trillion five hundred sixty-seven billion eight hundred ninety million tokens… 
-erc20= aave/bal/bnb/comp/crv/pepe/vxs/uni/ƒ₤¥
-Btc/cbBtc+/LBtc/wBtc/tBtc… 
-Eth+/weth/wsteth/ezeth/reth/cbeth/ethx...   
+Erc20= aave/bal/bnb/comp/crv/pepe/vxs/uni/ƒ₤¥ Btc/cbBtc/LBtc/wBtc/tBtc… Eth+/weth/wsteth/ezeth/reth/cbeth/ethx...   
 U$D= usdc /pyusd /usdt /gusd /crvusd /gho /dai /usds /usd1 =“1:$1”  
  
-Base Exchange:- low volatility of high price sales through bond mechanisms /Inverse Bonds selling twa-amm through strategy for lowest slippage 
+Base Exchange:- low volatility of high price sales through bond mechanisms 
+Bonds to buy crypto at a set rate for whale/institutional 
+Inverse Bonds selling 
+twa-amm through strategy for lowest slippage 
+Buy bonds and divest lp while providing incentives for liquidity management roles among defi projects.
 
-Airfield: DAO- CLI to upgrade contracts for token teams 
+Airfield- DAO
 
-Silo - yield aggregator
+Silo- yield aggregator
 
-Mess Hall- liquidity pool farming links
+Mess Hall- liquidity pool farming links (Balancer,Curve,Uniswap)
 
 Barracks- account Metrics 
 
-Barrier- layer0 bridge OP stack infrastructure for low fee + off chain liquidity 
+Barrier- layer0 bridge
 
-Armory- infrastructure dev & support discord/git 
+Armory- developer support
 
-Latrine- liquidator Bot arbitrage ui
-
-The ERC1155Base contract integrates ERC1155 token functionality with modular capabilities, providing hooks for minting, burning, transferring, and metadata updates. This contract is ideal for projects requiring flexible token operations and works well with modules that add extra features to ERC1155 token management. ERC721 All NFTs in the contract have shared metadata except that each NFT has its unique token ID appended to the NFT's name. An admin can set this shared metadata at any time. The contract does not require the admin to set a limit to the total supply of NFTs. The admin can set claim phases (like in NFT Drop) to apply restrictions on the minting of NFTs, such as a price, mint start and end times, etc. Getting started to add ERC-4337 compatible smart accounts to your application easily, Let users connect to their smart account using any personal wallet: including in-app wallets for easy onboarding. Automatically deploy individual account contracts for your users when they do their first onchain transaction. Handle all transaction gas costs via paymaster.
+Latrine- liquidator Bot
