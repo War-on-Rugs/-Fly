@@ -12,20 +12,14 @@ U$D= usdc /pyusd /usdt /gusd /crvusd /gho /dai /usds /usd1 =“1:$1”
 
 Airfield- DAO voting
 
-Armory- developer support
-
 Barracks- account Metrics 
 
-BaseExchange- layer0 bridge
+BaseExchange- swap & layer0 bridge
 
-Latrine- liquidator Bot
-
-Mess Hall- liquidity pool farming links (Balancer,Curve,Uniswap)
+Mess Hall- liquidity-pool farming links (Balancer,Curve,Uniswap)
 
 Range- low volatility of high price sales through bond mechanisms 
   Bond crypto at a set rate for whale/institutional 
   Inverse-Bonds selling 
   twa-amm through strategy for lowest slippage 
   divest lp while providing incentives for liquidity management roles among defi projects.
-
-Silo- yield aggregator Bot
