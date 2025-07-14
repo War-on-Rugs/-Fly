@@ -1,4 +1,4 @@
-univ4sdk:
+UniswapV4sdk:
 swap 
 modifyLiquidity
 donate
@@ -6,6 +6,7 @@ take
 settle
 mint
 burn
+
 {before,after}Initialize
 {before,after}AddLiquidity
 {before,after}RemoveLiquidity
@@ -16,37 +17,16 @@ Core Logic:
 getPoolId: Generates a unique bytes32 pool ID using keccak256 on token0 and token1.
 updateLargestHolder: Allows external updates to the largest holder for a pool (likely by governance).
 calculateRequiredLiquidity: Estimates required liquidity based on the largest holder’s balance (simplified as balance * 2).
-beforeSwap:
-Checks if current pool liquidity is below the required amount.
-If insufficient, withdraws additional liquidity from the yield aggregator and emits LiquidityWithdrawn.
-afterSwap:
-Checks for excess liquidity in the pool.
-If excess exists, deposits it to the yield aggregator and emits LiquidityDeposited.
-withdrawFromYieldAggregator / depositToYieldAggregator:
-Handles token approvals and interactions with the yield aggregator.
-
-src/
-----interfaces/
-    | IPoolManager.sol
-    | ...
-----libraries/
-    | Position.sol
-    | Pool.sol
-    | ...
-----test
-----PoolManager.sol
-...
-test/
-----libraries/
-    | Position.t.sol
-    | Pool.t.sol
+beforeSwap: Checks if current pool liquidity is below the required amount. If insufficient, withdraws additional liquidity from the yield aggregator and emits LiquidityWithdrawn.
+afterSwap: Checks for excess liquidity in the pool. If excess exists, deposits it to the yield aggregator and emits LiquidityDeposited.
+withdrawFromYieldAggregator / depositToYieldAggregator: Handles token approvals and interactions with the yield aggregator.
 
 LehmanAgreementBootstrappingPool_:
 chain
 ContractAddress 		
-cbUSDCv3	
-cbUSDCv3 Implementation	
-cbUSDCv3 Ext	
+fly	
+fly Implementation	
+fly Ext	
 Configurator		
 Configurator Implementation		
 Proxy Admin		
@@ -55,19 +35,12 @@ Rewards
 Bulker
 Governor
 Timelock
-AaveV3USD
-AaveDebt 
-UniV2-lp 
-*erc20*
+Erc-20
+Erc20-*Debt* 
 Protocol Contracts
-"cbUSDCv3"
+"$⨎₤¥"
 
-If yieldAggregator is USD, the contract deposits/withdraws liquidity to/from Aave/compound/uniswap/xvs’s lending pools.
-Simplistic Liquidity Calculation: The calculateRequiredLiquidity function uses a naive balance * 2 approach. In practice, you’d need price oracles or more sophisticated logic to determine liquidity needs accurately.
-Error Handling: The contract reverts if yield aggregator operations fail, which is good, but it lacks fallback mechanisms or retry logic.
-Governance: The updateLargestHolder function is not restricted (e.g., no onlyOwner or governance check), which could be a security risk.
-Token Assumptions: The contract assumes key.token0 for liquidity calculations, ignoring token1. This may not work for all pool configurations.
-Gas Optimization: Repeated calls to poolManager.liquidity and poolManager.balanceOf could be cached to save gas.
+If yieldAggregator is USD, the contract deposits/withdraws liquidity to/from lending pools.
 ***Suggestions for Improvement***
 Add Access Control: Restrict updateLargestHolder to a governance contract or owner.
 Refine Liquidity Calculation: Use price oracles (e.g., Chainlink) or pool reserves to calculate required liquidity more accurately.
@@ -76,29 +49,23 @@ Add Fallback Logic: Implement fallback mechanisms if the yield aggregator fails.
 Gas Optimization: Cache state variables and minimize external calls.
 Event Enhancements: Include more details in events (e.g., sender, timestamp).
 
-
     function _decay(uint256 _id, uint48 _time) internal {
-        // Debt decay
-
-        /*
+        // Debt decay=
          * Debt is a time-decayed sum of tokens spent in a market
          * Debt is added when deposits occur and removed over time
          * |
          * |    debt falls with
-         * |   / \  inactivity / \
-         * | /     \              /\/     \
-         * |         \           /             \
-         * |           \      /                  \
-         * |             \  /  and rises   \
+         * |   / \  inactivity       / \
+         * | /     \              /\/    \
+         * |         \          /         \
+         * |           \      /              \
+         * |             \  /  and rises       \
          * |                with deposits
-         * |
          * |------------------------------------| t
          */
         markets[_id].totalDebt -= debtDecay(_id);
         metadata[_id].lastDecay = _time;
-
         // Control variable decay
-
         // The bond control variable is continually tuned. When it is lowered (which
         // lowers the market price), the change is carried out smoothly over time.
 
