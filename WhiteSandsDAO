@@ -12,7 +12,7 @@ chains = Arbitrum _ Base _ Binance _ Ethereum_ Optimsim _ Polygon _ Unichain
   euler: LONG aero/wsteth/weeth SHORT eth/cbbtc emmissions into xvs  
   venus: LONG arb/bnb/eth/wbtc/op/uni/xvs SHORT arb/op/weth/usd emissions into vault and claim once month to boost bal lp...
   aerodrome: lp aero/fly cbbtc/usdc   
-  balancer: lp bal/aave/comp/reul/xvs/gho/⨎₤¥ + aero/bal/crv/uni/gho/⨎₤¥ + bal/arb/bnb/eth/op/pol/link/gho/⨎₤¥ + bal/btc/eth/usdc/gho/pepe/⨎₤¥
+  balancer: lp bal/aave/comp/reul/xvs/eth/gho/⨎₤¥ + aero/bal/crv/uni/eth/gho/⨎₤¥ + bal/arb/bnb/eth/op/pol/link/gho/⨎₤¥ + bal/btc/eth/usdc/gho/pepe/⨎₤¥
   curve: lp u$d/+crv\ Eth/weth/wsteth/weeth/ezeth/reth/cbeth/crv\ wBtc/cbBtc/lBtc/tBtc/crv/crvusd/⨎₤¥\ 
   uniswap: lp v4 hooks to optimise liquidity
 
