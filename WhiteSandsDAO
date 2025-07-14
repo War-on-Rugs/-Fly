@@ -5,7 +5,7 @@ $⨎₤¥ between assets seamlessly with background liquidity being backed by as
 
 WhiteSandsDao “Pursuing the acquisitions of funds” 
 $⨎₤¥ = 1,234,567,890,000 = one quadrillion two hundred thirty-four trillion five hundred sixty-seven billion eight hundred ninety million tokens… 
-Erc20's = aave/aero/arb/bal/btc/bnb/comp/crv/eth/eul/link/op/pol/vxs/uni/pepe/fart/ƒ₤¥ / usdc/usdc.e/usdt/usdt0/dai/usds/gho/crvusd/usd1/pyusd/gusd/rlusd
+Erc20's = aave/aero/arb/bal/btc/bnb/comp/crv/eth/eul/link/op/pol/vxs/uni/pepe/fart/ƒ₤¥ + usdC/usdT/usd1/usds/dai/gho/CRVusd/PYusd/Gusd/RLusd
 chains = Arbitrum _ Base _ Binance _ Ethereum_ Optimsim _ Polygon _ Unichain
   aave: LONG aave/usd SHORT wsteth/wbtc/cbbtc/arb/op/pol/link/cake/uni/bal/crv
   compound: LONG arb/op/comp/cbbtc/wsteth/weeth/ezeth/cbeth/uni SHORT aero/eth/usd emmissions into xvs
@@ -13,7 +13,7 @@ chains = Arbitrum _ Base _ Binance _ Ethereum_ Optimsim _ Polygon _ Unichain
   venus: LONG arb/bnb/eth/wbtc/op/uni/xvs SHORT arb/op/weth/usd emissions into vault and claim once month to boost bal lp...
   aerodrome: lp aero/fly cbbtc/usdc   
   balancer: lp bal/aave/comp/reul/xvs/eth/gho/⨎₤¥ + aero/bal/crv/uni/eth/gho/⨎₤¥ + bal/arb/bnb/eth/op/pol/link/gho/⨎₤¥ + bal/btc/eth/usdc/gho/pepe/⨎₤¥
-  curve: lp u$d/+crv\ Eth/weth/wsteth/weeth/ezeth/reth/cbeth/crv\ wBtc/cbBtc/lBtc/tBtc/crv/crvusd/⨎₤¥\ 
+  curve: lp u$d/+crv\ crv/Eth/weth/wsteth/weeth/ezeth/reth/cbeth\ crv/wBtc/cbBtc/lBtc/tBtc/crvusd/⨎₤¥\ crv/paxG/XAUt/crvusd
   uniswap: lp v4 hooks to optimise liquidity
 
 1.Airfield- DAO voting
