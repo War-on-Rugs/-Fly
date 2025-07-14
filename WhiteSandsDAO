@@ -16,10 +16,10 @@ chains: Arbitrum _ Base _ Binance _ Ethereum_ Optimsim _ Polygon _ Unichain
 3.BaseEXchange- swap&layer0bridge=uniswapV4sdk*
 
 4.MessHall- liquidity farming links:
-  aave: long aave/usd short wsteth/wbtc/cbbtc/arb/op/pol/link/cake/uni/bal/crv
-  compound: long arb/op/comp/cbbtc/wsteth/weeth/ezeth/cbeth/uni short aero/eth/usd emmissions into xvs
-  euler: long aero/wsteth/weeth short eth/cbbtc emmissions into xvs  
-  venus: long arb/bnb/eth/wbtc/op/uni/xvs short arb/op/weth/usd emissions into vault and claim once month to boost bal lp...
+  aave: LONG aave/usd SHORT wsteth/wbtc/cbbtc/arb/op/pol/link/cake/uni/bal/crv
+  compound: LONG arb/op/comp/cbbtc/wsteth/weeth/ezeth/cbeth/uni SHORT aero/eth/usd emmissions into xvs
+  euler: LONG aero/wsteth/weeth SHORT eth/cbbtc emmissions into xvs  
+  venus: LONG arb/bnb/eth/wbtc/op/uni/xvs SHORT arb/op/weth/usd emissions into vault and claim once month to boost bal lp...
   aerodrome: lp aero/fly cbbtc/usdc   
   balancer: lp bal/aave/comp/reul/xvs/⨎₤¥ + aero/bal/crv/uni/⨎₤¥ + bal/arb/bnb/eth/op/pol/link/⨎₤¥ + bal/btc/eth/usdc/pepe/⨎₤¥
   curve: lp u$d/+crv\ Eth/weth/wsteth/weeth/ezeth/reth/cbeth/crv\ wBtc/cbBtc/lBtc/tBtc/crv/crvusd/⨎₤¥\ 
