@@ -9,7 +9,7 @@ Erc20's = aave/aero/arb/bal/btc/bnb/comp/crv/eth/eul/link/op/pol/vxs/uni/pepe/fa
           + aaveUSDC/aaveUSDT/aaveAave/venusWBTC/venusWETH/venusWSTETH/venusARB/venusBNB/venusXVS/venusUNI/eulAero/eulWEETH/eulWSTETH
          
           - aaveDebtWBTC/aaveDebtWSTETH/aaveDebtCBBTC/aaveDebtTBTC/aaveDebtOP/aaveDebtLINK
-          VenusDebtWETH/VenusDebtWBTC/VenusDebtUSDC/VenusDebtUSDT
+          VenusDebtWETH/VenusDebtWBTC/VenusDebtUSDC/VenusDebtUSDT/venusDebtWSTETh/venusDebtXVS
           cUSDCv3/cUSDTv3/cETHv3/cUSDSv3/cAEROv3
           eulDebtWETH/eulDebtCBBTC
 
