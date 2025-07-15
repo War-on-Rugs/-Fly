@@ -55,10 +55,10 @@ Event Enhancements: Include more details in events (e.g., sender, timestamp).
          * Debt is added when deposits occur and removed over time
          * |
          * |    debt falls with
-         * |   / \  inactivity       / \
-         * | /     \              /\/    \
-         * |         \          /         \
-         * |           \      /              \
+         * |   _/ \  inactivity       / \
+         * | /      \              /\/    \
+         * |         \_        _/          \_
+         * |           \      /              \_
          * |             \  /  and rises       \
          * |                with deposits
          * |------------------------------------| t
