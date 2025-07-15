@@ -6,7 +6,7 @@ WhiteSandsDao “Pursuing the acquisitions of funds”
 $⨎₤¥ = 1,234,567,890,000 = one quadrillion two hundred thirty-four trillion five hundred sixty-seven billion eight hundred ninety million tokens… 
 chains = Arbitrum _ Base _ Binance _ Ethereum_ Optimsim _ Polygon _ Unichain
 Erc20's = aave/aero/arb/bal/btc/bnb/comp/crv/eth/eul/link/op/pol/vxs/uni/pepe/fart/shib/ƒ₤¥ + usdC/usdT/usd1/usds/dai/gho/CRVusd/PYusd/Gusd/RLusd 
-          + aaveUSDC/aaveUSDT/aaveAave/venusWBTC/venusWETH/venusARB/venusBNB/venusXVS/venusUNI/eulAero/eulWEETH/eulWSTETH
+          + aaveUSDC/aaveUSDT/aaveAave/venusWBTC/venusWETH/venusWSTETH/venusARB/venusBNB/venusXVS/venusUNI/eulAero/eulWEETH/eulWSTETH
          
           - aaveDebtWBTC/aaveDebtWSTETH/aaveDebtCBBTC/aaveDebtTBTC/aaveDebtOP/aaveDebtLINK
           VenusDebtWETH/VenusDebtWBTC/VenusDebtUSDC/VenusDebtUSDT
@@ -14,9 +14,9 @@ Erc20's = aave/aero/arb/bal/btc/bnb/comp/crv/eth/eul/link/op/pol/vxs/uni/pepe/fa
           eulDebtWETH/eulDebtCBBTC
 
 aave: LONG aave/usd SHORT wsteth/wbtc/cbbtc/tbtc/op/link
-compound: LONG arb/op/comp/cbbtc/wsteth/weeth/ezeth/cbeth/uni SHORT aero/eth/usd emmissions into cUSDTv3vault
+compound: LONG arb/op/comp/cbbtc/wsteth/weeth/ezeth/cbeth/uni SHORT aero/eth/usdc/usdt/usds emmissions into cUSDTv3vault
 euler: LONG aero/wsteth/weeth SHORT eth/cbbtc emmissions into lp  
-venus: LONG arb/bnb/eth/wbtc/op/uni/xvs SHORT arb/op/weth/usd emissions into vault and claim once week...
+venus: LONG arb/bnb/eth/wbtc/wsteth/op/uni/xvs SHORT arb/op/weth/wsteth/weeth/usdc/usdt/usd1/xvs emissions into vault and claim once week...
 aerodrome: lp aero/fly cbbtc/usdc   
 balancer: lp bal/aave/comp/reul/xvs/eth/gho/⨎₤¥ + aero/bal/crv/uni/eth/gho/⨎₤¥ + bal/arb/bnb/eth/op/pol/link/gho/⨎₤¥ + bal/btc/eth/gho/pepe/fart/shib/⨎₤¥
 curve: lp u$d/+crv\ crv/Eth/weth/wsteth/weeth/ezeth/reth/cbeth\ crv/wBtc/cbBtc/lBtc/tBtc/crvusd/⨎₤¥\ crv/paxG/XAUt/crvusd\ crv/fly/pepe/fart/shib/weth 
