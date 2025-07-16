@@ -16,7 +16,7 @@ aave: LONG aave/usd SHORT wsteth/wbtc/cbbtc/tbtc/op/link
 compound: LONG arb/op/comp/cbbtc/wsteth/weeth/ezeth/cbeth/uni SHORT aero/eth/usdc/usdt/usds emmissions into cUSDTv3vault  
 venus: LONG arb/bnb/eth/wbtc/wsteth/op/uni/xvs SHORT arb/op/weth/wsteth/weeth/usdc/usdt/usd1/xvs emissions into vault and claim once week...
 aerodrome: lp aero/fly cbbtc/usdc   
-balancer: lp bal/aave/comp/reul/xvs/eth/gho/⨎₤¥ + aero/bal/crv/uni/eth/gho/⨎₤¥ + bal/arb/bnb/eth/op/pol/link/gho/⨎₤¥ + bal/btc/eth/gho/pepe/fart/shib/⨎₤¥
+balancer: lp bal/aave/comp/xvs/eth/gho/⨎₤¥ + aero/bal/crv/uni/eth/gho/⨎₤¥ + bal/arb/bnb/eth/op/pol/link/gho/⨎₤¥ + bal/btc/eth/gho/pepe/fart/shib/⨎₤¥
 curve: lp u$d/+crv\ crv/Eth/weth/wsteth/weeth/ezeth/reth/cbeth\ crv/wBtc/cbBtc/lBtc/tBtc/crvusd/⨎₤¥\ crv/paxG/XAUt/crvusd\ crv/fly/pepe/fart/shib/weth 
 uniswap: v4 hooks to optimise liquidity in balancer/curve lp's
 1fly/eth 2cbbtc/wbtc 3cbbtc/usdc 4wbtc/usdt 5aave/comp 6bal/crv 7reul/xvs 8bnb/eth 9pol/eth 10arb/eth 11op/eth 12link/uni 13pepe/fly 14shib/fart 15paxg/xaut  
