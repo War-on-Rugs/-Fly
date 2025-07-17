@@ -12,14 +12,13 @@ Erc20's = aave/aero/arb/bal/btc/bnb/comp/crv/eth/link/op/pol/vxs/uni/pepe/fart/s
           VenusDebtWETH/VenusDebtWBTC/VenusDebtUSDC/VenusDebtUSDT/venusDebtWSTETh/venusDebtXVS
           cUSDCv3/cUSDTv3/cETHv3/cUSDSv3/cAEROv3
 
-aave: LONG aave/usd SHORT wsteth/wbtc/cbbtc/tbtc/op/link
+aave: LONG aave/usd SHORT wsteth/wbtc/cbbtc/tbtc/arb/op/link
 compound: LONG arb/op/comp/cbbtc/wsteth/weeth/ezeth/cbeth/uni SHORT aero/eth/usdc/usdt/usds emmissions into cUSDTv3vault  
-venus: LONG arb/bnb/eth/wbtc/wsteth/op/uni/xvs SHORT arb/op/weth/wsteth/weeth/usdc/usdt/usd1
-aerodrome: lp aero/fly cbbtc/usdc   
+venus: LONG arb/bnb/eth/wbtc/wsteth/op/uni/xvs SHORT arb/op/weth/wsteth/weeth/usdc/usdt
+aerodrome: lp aero/fly
 balancer: lp bal/aave/comp/xvs/eth/gho/⨎₤¥ + aero/bal/crv/uni/eth/gho/⨎₤¥ + bal/arb/bnb/eth/op/pol/link/gho/⨎₤¥ + bal/btc/eth/gho/pepe/fart/shib/⨎₤¥
 curve: lp u$d/+crv\ crv/Eth/weth/wsteth/weeth/ezeth/reth/cbeth\ crv/wBtc/cbBtc/lBtc/tBtc/crvusd/⨎₤¥\ crv/paxG/XAUt/crvusd\ crv/fly/pepe/fart/shib/weth 
 uniswap: v4 hooks to optimise liquidity in balancer/curve lp's
-1fly/eth 2cbbtc/wbtc 3cbbtc/usdc 4wbtc/usdt 5aave/comp 6bal/crv 7bnb/xvs 8pol/eth 9arb/eth 10op/eth 11link/uni 12pepe/fly 13shib/fart 14paxg/xaut  
 
 1.Airfield- DAO voting
 
@@ -27,6 +26,6 @@ uniswap: v4 hooks to optimise liquidity in balancer/curve lp's
 
 3.BaseEXchange- Swap & Layer0Bridge = uniswapV4sdk*
 
-4.MessHall- liquidity farming links
+4.MessHall- liquidity farming links to boosted pools
 
 5.Range- Bond crypto at a set rate TimeWeightedAverage-AutomatedMarketMaker strategy for lowest slippage ("% discount") mint lp nft that locks in a sale at specific ticks and matures based on vesting schedule of protocol.
