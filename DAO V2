@@ -43,13 +43,23 @@ v4 99.99%fee 100:$1 usd+99.9999%fee 100000:$1usd
 
 WhiteSandsDao “Pursuing the acquisitions of funds” 
 $⨎₤¥ = 123,456,789,000,000,000 = one hundred quadrillion
+chains = Arbitrum _ Base _ Binance _ Ethereum_ Optimsim _ Polygon _ Solana _ Unichain
+Erc20's = aave/aero/arb/bal/wbtc/bnb/comp/crv/doge/weth/eul/hype/link/ltc/lido/op/pol/sol/vxs/uni/pepe/fart/shib/xrp/zec/ƒ₤¥ + usdC/usdT/usd1/usds/dai/gho/CRVusd/PYusd/Gusd/RLusd 
+          + aaveUSDC/aaveUSDT/aaveAave/venusWBTC/venusWETH/venusARB/venusBNB/venusXVS/venusUNI
+          - aaveDebtWBTC/aaveDebtWSTETH/aaveDebtWBTC/VenusDebtWETH/VenusDebtWBTC/VenusDebtUSDC/VenusDebtUSDT/venusDebtWSTETh/venusDebtXVS
+          cUSDCv3/cUSDTv3/cETHv3/cUSDSv3/cAEROv3/cWSTETHv3/cWBTCv3
+
+aave: LONG aave/cbbtc/cbeth/arb/bnb/op/pol/usd SHORT wsteth/wbtc
+compound: LONG arb/op/comp/cbbtc/wbtc/wsteth/weeth/ezeth/cbeth/susds/uni/xaut SHORT aero/eth/usdc/usdt/usds emmissions into xaut-cUSDTv3vault
+euler: long usdc/eul short pyusd
+venus: LONG arb/bnb/eth/wbtc/wsteth/op/uni/xvs SHORT arb/bnb/op/weth/wsteth/weeth/usdc/usdt
+aerodrome: lp aero/
+balancer: lp bal/aave/comp/xvs/eth/gho/usdc/⨎₤¥ + aero/bal/crv/uni/eth/gho/usdc/⨎₤¥ + arb/bal/bnb/eth/op/pol/link/⨎₤¥ 
+curve: lp u$d/+crv\ crv/Eth/weth/wsteth/weeth/ezeth/reth/cbeth\ crv/wBtc/cbBtc/lBtc/tBtc/crvusd/⨎₤¥\ crv/paxG/XAUt/crvusd\ crv/fly/pepe/fart/shib/weth 
+uniswap: v4 hooks to optimise liquidity in balancer/curve lp's
 
 1.Airfield- DAO voting
-
 2.Barracks- account Metrics 
-
-3.BaseEXchange- Swap & Layer0Bridge = uniswapV4sdk*
-
+3.BaseExchange- Swap & Layer0Bridge = uniswapV4sdk*
 4.MessHall- liquidity farming links to boosted pools
-
-5.Range- Bond crypto at a set rate TimeWeightedAverage-AutomatedMarketMaker strategy for lowest slippage ("% discount") mint that locks in a sale at specific ticks and matures based on vesting schedule of protocol.
+5.Range- Bond crypto at a set rate TimeWeightedAverage-AutomatedMarketMaker strategy for lowest slippage ("% discount") mint lp nft that locks in a sale at specific ticks and matures based on vesting schedule of protocol.
