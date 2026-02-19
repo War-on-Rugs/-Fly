@@ -1,1 +1,28 @@
 0x166c293F2e3b180f00b25e82ad5B592A7c8F4D3d
+
+// SPDX-License-Identifier: MIT
+// Compatible with OpenZeppelin Contracts ^5.5.0
+pragma solidity ^0.8.27;
+
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {ERC20Bridgeable} from "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Bridgeable.sol";
+
+contract Gold is ERC20, ERC20Bridgeable {
+    address internal constant SUPERCHAIN_TOKEN_BRIDGE = 0x4200000000000000000000000000000000000028;
+    error Unauthorized();
+
+    constructor(address recipient) ERC20(unicode"₿gold ", unicode"₿Gold") {
+        if (block.chainid == 1) {
+            _mint(recipient, 1000000000 * 10 ** decimals());
+        }
+    }
+
+    /**
+     * @dev Checks if the caller is the predeployed SuperchainTokenBridge. Reverts otherwise.
+     *
+     * IMPORTANT: The predeployed SuperchainTokenBridge is only available on chains in the Superchain.
+     */
+    function _checkTokenBridge(address caller) internal pure override {
+        if (caller != SUPERCHAIN_TOKEN_BRIDGE) revert Unauthorized();
+    }
+}
