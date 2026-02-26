@@ -1,14 +1,9 @@
-aave/compound= weth/usd/wbtc/xaut lending loop
+Uniswap/Balancer/Curve= Aave/Compound/Euler/VenusProtocol= Arbitrum/Base/Binance/Ethereum/Optimism/Polygon/Solana/Unichain wrapped'eth/wrapped'btc/usd/xaut erc20 - lending loop "$⨎₤¥"
 
-Rehypothecation: In DeFi, rehypothecation means a protocol or user reuses collateral that’s already locked or staked somewhere else, effectively stacking leverage on top of the same underlying asset.
+X times y equals constant k, A quintillion can be divided infinitely, but if you're asking how many times it can be divided by 2 before reaching a whole number, you can divide it 18 times, as it is equal to 10 raised to the power of 18. Each division by 2 will halve the number until you reach a fraction... 
 
-For example:
-You deposit ETH into Lido and receive stETH (a liquid staking token).
-You use that stETH as collateral on Aave to borrow USDC.
-Someone else might take that USDC, buy more ETH, stake it again, mint more stETH…
+Rehypothecation: In DeFi, rehypothecation means a protocol or user reuses collateral that’s already locked or staked somewhere else, effectively stacking leverage on top of the same underlying asset. For example:You deposit ETH into Lido and receive stETH (a liquid staking token). You use that stETH as collateral on Aave to borrow USDC. Someone else might take that USDC, buy more ETH, stake it again, mint more stETH… Rehypothecation in Uniswap v4: Uniswap v4 hooks enable a form of rehypothecation by allowing liquidity providers to earn additional yield on their deposited tokens without compromising the pool’s functionality.
 
-Rehypothecation in Uniswap v4
-Uniswap v4 hooks enable a form of rehypothecation by allowing liquidity providers to earn additional yield on their deposited tokens without compromising the pool’s functionality.
 How it works:
 Liquidity Deposit: When users add liquidity to a pool, the hook can intercept the tokens using beforeAddLiquidity and afterAddLiquidity callbacks.
 External Deployment: The hook automatically deposits these tokens into external yield-generating protocols (like lending platforms, staking contracts, or other DeFi protocols).
@@ -42,8 +37,7 @@ burn
 
 Core Logic:
 getPoolId: Generates a unique bytes32 pool ID using keccak256 on token0 and token1.
-updateLargestHolder: Allows external updates to the largest holder for a pool (likely by governance).
-calculateRequiredLiquidity: Estimates required liquidity based on the largest holder’s balance (simplified as balance * 2).
+calculateRequiredLiquidity: Estimates required liquidity
 beforeSwap: Checks if current pool liquidity is below the required amount. If insufficient, withdraws additional liquidity from the yield aggregator and emits LiquidityWithdrawn.
 afterSwap: Checks for excess liquidity in the pool. If excess exists, deposits it to the yield aggregator and emits LiquidityDeposited.
 withdrawFromYieldAggregator / depositToYieldAggregator: Handles token approvals and interactions with the yield aggregator.
@@ -69,7 +63,6 @@ Protocol Contracts
 
 If yieldAggregator is USD, the contract deposits/withdraws liquidity to/from lending pools.
 ***Suggestions for Improvement***
-Add Access Control: Restrict updateLargestHolder to a governance contract or owner.
 Refine Liquidity Calculation: Use price oracles (e.g., Chainlink) or pool reserves to calculate required liquidity more accurately.
 Support Both Tokens: Handle both token0 and token1 in liquidity calculations to support all pool types.
 Add Fallback Logic: Implement fallback mechanisms if the yield aggregator fails.
@@ -146,12 +139,6 @@ contract LiquidityAndYieldManagerHook is BaseHook {
     // Helper function to get a unique identifier for each pool
     function getPoolId(PoolKey calldata key) internal pure returns (bytes32) {
         return keccak256(abi.encode(key.token0, key.token1));
-    }
-
-    // Function to update largest holder, should be called by some governance or external trigger
-    function updateLargestHolder(PoolKey calldata key, address newLargestHolder) external {
-        bytes32 poolId = getPoolId(key);
-        largestHolders[poolId] = newLargestHolder;
     }
 
     function calculateRequiredLiquidity(PoolKey calldata key, address largestHolder) internal view returns (uint256) {
