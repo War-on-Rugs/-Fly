@@ -19,7 +19,7 @@ Aave-
 69%ltv aave
 68%ltv pol
 66%ltv link
-58%arb
+58%ltv arb
 
 Balancer-
 Weighted* pools up to 8 assets, Erc20: 
