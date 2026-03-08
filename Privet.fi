@@ -7,3 +7,225 @@ portal link:erc20bridge:evm/svm/etc…
 
 Stock ETF:tokenized and held in a treasury with oracle pricing against/usd: 
 BerkshireHathaway class A & Brk.B -RSG -WCN -GFL -CWST -WM -SPY -VOO -QQQ -AXP -SMFG -BCS -JPM -BAC -CVS -COIN  
+
+
+
+Bridge 1 cbbtc +32* staked-eth & bluechip unichain arbitrage strategy re-hyp-o-thyc-cation 
+
+Aave-
+75%ltv cbeth-usd/wsteth-eurc
+73%ltv wbtc/cbbtc
+70%ltv xaut0/usdt0
+69%ltv aave
+68%ltv pol
+66%ltv link
+58%arb
+
+Balancer-
+Weighted* pools up to 8 assets, Erc20: 
+13% ₿€th/ 10% ₿tc/ 33.5% ₿gold/ 33.5% ¥€$\uni$wapDll’r/ 7%⨎₤¥/ 3%Tailor.Hemingway.Associates
+1.5%aave/2.3%bal/38.85%paxg/38.85%xaut/4.25%pyusd/5.75%usdt/7%wsteth/1.5%link
+1.3%aave/7.7%bal/10.5%wsteth/10.5%cbeth/10%link/15%gusd/15%usdc/15%usdt/15%pyusd 
+1%bal/ 49%crv/10%crvusd/15.3%scrvusd/ 4.9%wbtc/ 4.9%wsteth/ 4.9%xaut/10%usdt
+1%bal/49%uni/5%usdc/5%dai/10%usdt/10%wsteth/10%weeth/10%wbtc
+1%bal/5%aave/30%comp/5%eul/5%morpho/5%xvs/40%usdc/9%wsteth
+10%bal/10%crv/30%uni/10%1inch/14.5%usdc/14.5%usdt/10%wsteth/1%wbtc
+
+Compound-
+90-93%ltv susds/usds
+90%ltv wsteth-weeth-rseth-teth/eth-wsteth
+83%ltv eth/usdc
+80%ltv wbtc/eth
+70%ltv xaut - uni/eth
+68%ltv uni/usdc
+50%ltv comp/usdt
+
+Curve-
+*Tri-crypto*wbtc/weth/usd*
+paxg/pyusd/crv-xaut/usdt/crv… crv/crvusd/scrvusd
+*8-asset* pools stable pegs*
+Crvusd/scrvusd/dai/sdai/usds/susds/usde/susde/
+lusd/gho/usdg/usdtb/usdt0/usdc.e/fdusd/
+usdc/usdt/gusd/pyusd/rlusd/eurc/jpy
+crv/cbeth/wsteth/weeth/reth/rseth/ezeth/₿€th
+
+Euler-
+98%ltv reth/weth
+96%ltv usdt/usdc/susdc
+95%ltv wsteth/weth
+94%ltv weeth/weth
+80%ltv wbtc/eth
+60%ltv usdc/eul (94%ltv eul/eul -.5%)
+
+Morpho-
+96.5%ltv wsteth/weth
+94.5%ltv rseth-weeth-susdc/weth
+91.5%ltv pt-usd/usdc
+86%ltv weth/usd
+62.5%ltv uni/usd
+77%paxg-xaut/usd
+
+Xvs-
+80%ltv bnb
+77%ltv wbtc-usdt0
+70%ltv weth-usdc
+60%ltv xvs
+58%ltv op
+55%ltv arb
+50%ltv uni
+
+Uniswap- 
+v2 = .3%fee…
+v4 = .0001-99.9999%fees…
+
+Erc20: aave/acx/bal/cake/comp/crv/doge/ens/eul/hype/ldo/link/paxg/pepe/rez/sol/snx/sushi/tha/uni/yfi/xaut/xpl/xrp/xvs/zec/1inch
+Bitcoin: wbtc/cbbtc/wbtc0
+Ethereum: eth/cbeth/weth/wsteth/weeth/reth/rseth/ezeth/steth
+US dollar: usdc/usdt0/dai/sdai/gusd/pyusd/lusd/susds/usds/usdt/ousdt
+
+Set liquidity to create a comet factory strategy long gold/ short usd… ⅓ gold ⅓ treasuries ⅓ erc20s
+
+1st gold: PaxG /xaut =₿gold
+2nd bitcoin: Cbbtc /wbtc =₿tc
+3rd ether: cbeth /wsteth/weeth/reth/rseth/ezeth/steth =₿€th
+4th lending markets: aave/comp/eul/morpho/xvs 
+5th DEXs: bal/cake/crv/sushi/uni/1inch 
+6th bridges: ada/arb/bch/bnb/eth/hype/ltc/op/pol/sol/xrp/uni/usdc/zec 
+7th governance: acx/ens/ldo/link/snx/rez/yfi 
+8th memes: doge/fart/pepe/shib/⨎₤¥ 
+9th treasuries: =  ¥€$/uni$wapDll’r Crvusd/usdc/usdc.e/usdt/usdt0/Ousdt/usds/susds/dai/sdai/gho/gusd/lusd/pyusd/rlusd/musd/usde/susde/usdg/usdtb/eurc/jpy/scrvusd
+10th tailor hemingway tokens: 13% ₿€th/ 10% ₿tc/ 33.5% ₿gold/ 33.5%¥€$\uni$wapDll’r/ 7%fly\⨎₤¥/ 3%Tailor.Hemingway.Associates 
+
+tailolr.hemingway.associates= 1 token with quintillion slots… $ or 1kg gold or 1 erc20… @99.9997%v4fee ? (+v2 positions.)
+1/22,000,000btc v2 +v4 90%fee with 10% supply~ rehypothyccation loop
+32/120,000,000eth v2+v4%fee? 13% supply~ rehypothyccation loop
+x/1,000,000kg gold bars v499.999%fee set 1000:1 fly/paxG 30%supply &v4 .0001%fee 3%supply~ bridged rehypothyccation loop
+x/300,000,000,000 v4 usd .01%fee… against gusd’s two decimal places 33.334% supply~ rehypothyccation loop
+x/633,000,000 uni v2 +v4 90%fee +rehypothyccation loop 
+x/1,000,000,000 link v2 +v4 rehypothyccation loop
+x/960,000,000 hype v2
+x/100,000,000,000 xrp v2
+x/16,500,000 zec v2
+x/16,000,000 aave v2 +v4 bridged rehypothyccation loop
+x/10,000,000 comp v2 +v4 rehypothyccation loop
+x/2,350,000,000 crv v2 +v4 rehypothyccation loop
+x/71,830,000 bal v2 yield
+x/27,180,000 eul v2 loop 
+x/30,000,000 xvs v2 loop
+x/10,000,000,000 xpl v2 
+x/10,000,000,000 arb v2 loop
+x/4,000,000,000 op v2 loop
+x/136,000,000 bnb v2 loop
+x/621,000,000 sol v2 +v4 bridge rehypothyccation loop
+x/10,000,000,000 pol v2 rehypothyccation loop
+x/36,000 yfi v2 +v4 yield
+x/38,000,000 ens v2 +v4 yield
+x/330,000,000 cake v2 yield
+x/ 287,000,000 sushi v2 yield
+x/ 1,500,000,000 1inch v2 yield
+x/ 1,000,000,000 lido v2 +v4 yield and slashing cushion
+x/ 10,000,000,000 rez v2 yield
+x/ 344,000,000 snx v2 yield
+x/ 20,000,000 bch v2 bridge
+x/ 77,000,000 ltc v2 bridge
+x/ 36,000,000,000 ada v2 bridge
+x/ 400,000,000 morpho v2 yield
+x/420,000,000,000,000 pepe v2 + v4 99.9997%
+x/589,000,000,000,000 shib v2
+x/153,000,000,000 doge v2
+x/1,000,000,000 fart v2
+
+
+// SPDX-License-Identifier: MIT
+// Compatible with OpenZeppelin Contracts ^5.6.0 and OpenZeppelin Uniswap Hooks ^1.2.1
+pragma solidity ^0.8.27;
+
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {BaseHook} from "@openzeppelin/uniswap-hooks/base/BaseHook.sol";
+import {ReHypothecationHook} from "@openzeppelin/uniswap-hooks/general/ReHypothecationHook.sol";
+import {IPoolManager} from "@uniswap/v4-core/src/interfaces/IPoolManager.sol";
+import {Hooks} from "@uniswap/v4-core/src/libraries/Hooks.sol";
+import {Currency} from "@uniswap/v4-core/src/types/Currency.sol";
+import {PoolKey} from "@uniswap/v4-core/src/types/PoolKey.sol";
+import {ModifyLiquidityParams} from "@uniswap/v4-core/src/types/PoolOperation.sol";
+
+// TODO: Override the required functions to customize the rehypothecation logic
+// i.e. keeping the liquidity in a yield-bearing ERC-4626 Vault while still being available for swaps, etc
+contract TailorHemingwayPrivetFi is ReHypothecationHook {
+    constructor(IPoolManager _poolManager)
+        BaseHook(_poolManager)
+        ERC20("TailorHemingwayAssociates", unicode"⨎₤¥")
+    {}
+
+    function getCurrencyYieldSource(Currency currency)
+        Public 0x3Afdc9BCA9213A35503b077a6072F3D0d5AB0840
+        view
+        override
+        returns (address)
+    {
+        // TODO: Implement how the yield source address is computed for a given currency
+    }
+
+    function _depositToYieldSource(Currency currency, uint256 amount)
+        internal
+        override
+    {
+        // TODO: Implement how a given currency is deposited to it's corresponding yield source
+    }
+
+    function _withdrawFromYieldSource(Currency currency, uint256 amount)
+        internal
+        override
+    {
+        // TODO: Implement how a given currency is withdrawn from it's corresponding yield source
+    }
+
+    function _getAmountInYieldSource(Currency currency)
+        internal
+        view
+        override
+        returns (uint256)
+    {
+        // TODO: Implement how the hook's balance of a given currency in it's corresponding yield source is obtained
+    }
+
+    function _beforeAddLiquidity(address sender, PoolKey calldata key, ModifyLiquidityParams calldata params, bytes calldata hookData)
+        internal
+        override
+        returns (bytes4)
+    {
+        // TODO: Implement __beforeAddLiquidity
+    }
+
+    function _beforeRemoveLiquidity(address sender, PoolKey calldata key, ModifyLiquidityParams calldata params, bytes calldata hookData)
+        internal
+        override
+        returns (bytes4)
+    {
+        // TODO: Implement __beforeRemoveLiquidity
+    }
+
+    function getHookPermissions()
+        public
+        pure
+        override
+        returns (Hooks.Permissions memory)
+    {
+        return Hooks.Permissions({
+            beforeInitialize: true,
+            afterInitialize: false,
+            beforeAddLiquidity: true,
+            beforeRemoveLiquidity: true,
+            afterAddLiquidity: false,
+            afterRemoveLiquidity: false,
+            beforeSwap: true,
+            afterSwap: true,
+            beforeDonate: false,
+            afterDonate: false,
+            beforeSwapReturnDelta: false,
+            afterSwapReturnDelta: false,
+            afterAddLiquidityReturnDelta: false,
+            afterRemoveLiquidityReturnDelta: false
+        });
+    }
+}
