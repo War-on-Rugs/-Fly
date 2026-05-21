@@ -1,6 +1,19 @@
-Uniswap/Balancer/Curve= Aave/Compound/Euler/VenusProtocol= Arbitrum/Base/Binance/Ethereum/Optimism/Polygon/Solana/Unichain wrapped'eth/wrapped'btc/usd/xaut erc20 - lending loop "$⨎₤¥"
-
 X times y equals constant k, A quintillion can be divided infinitely, but if you're asking how many times it can be divided by 2 before reaching a whole number, you can divide it 18 times, as it is equal to 10 raised to the power of 18. Each division by 2 will halve the number until you reach a fraction... 
+
+Uniswap v2LP = 
+#1Pepe/eth 2paxg/pyusd 3xaut/usdt 4uni/usdc 5wbtc/dai 6crv/scrvusd 7mkr/sdai 8sky/susds 9spk/stusds 10yfi/usds 11ens/link 12bitgold/fly 13⨎₤¥/pepe 14lido/wsteth 15aave/comp 
+
+⨎₤¥ ~ unichain wrapped pepe Bridge erc20s  
+{U$Dv}shib/pepe/usdt/usdt0/usdc/susdc/susds/usds/usds/dai/xrp/sky/crv/lido/link/uni/wsteth/bal/ens/wbtc/aave/comp/yfi/paxg{⨎₤¥^} 
+Leverage gold/erc20s to create treasuries and gain yield… paxg/pepe/⨎₤¥
+V2/tricypto x • y = k ~10% erc20s 1000000 tokens fly-treasuries constant product = k
+Stableswap X + Y = C ~90% gold 1000000000 tokens bitgold constant sum = C
+One million a thousand times leveraged $4.5trillion bitgold > 212oz=$1000000 
+bitgold/fly/erc20 - maker-sky-spark/tether/paxos 
+[28m pepe/eth v2-LP tokens worth $25.6m in liquidity] [1.6k pax/eth] [5k~uni/eth]
+1 pepe/weth Lp token … 9999999 pepe/⨎₤¥ liquidtypooltokens
+
+stonkz/tha.₿/U$D/⨎₤¥/¥€$/₿itgold-pwt/emojicoins - etf+gold+treasuries tokenized- “staking” - stablecoin/Giftcard portal-
 
 Rehypothecation: In DeFi, rehypothecation means a protocol or user reuses collateral that’s already locked or staked somewhere else, effectively stacking leverage on top of the same underlying asset. For example:You deposit ETH into Lido and receive stETH (a liquid staking token). You use that stETH as collateral on Aave to borrow USDC. Someone else might take that USDC, buy more ETH, stake it again, mint more stETH… Rehypothecation in Uniswap v4: Uniswap v4 hooks enable a form of rehypothecation by allowing liquidity providers to earn additional yield on their deposited tokens without compromising the pool’s functionality.
 
@@ -10,15 +23,6 @@ External Deployment: The hook automatically deposits these tokens into external 
 Swap Execution: Before each swap, the hook uses beforeSwap to withdraw tokens from the external protocol, allowing the swap to execute normally.
 Re-deposit: After the swap completes, afterSwap re-deposits the tokens back into the yield-generating protocol.
 This creates a seamless experience where LPs earn both trading fees from Uniswap and additional yield from external protocols, while maintaining full liquidity for trading.
-
-Aave: withdraws&lend & borrow wbtc/wsteth
-Balancer: weighted 8>token pools
-Beefy: compound links for looping arb-base-op aero/eth/usdc/usdt v3comets
-Compound: unichain borrow; v3comets rebalance for max lend/borrow 
-Crv: tricrypto+llamalend
-Eul: usdc-pyusd usdc-eul
-Xvs: unichain-binance-arbitrum-base-optimism borrow&bridge wbtc
-Uniswap: v4 JiT liquidity /from lending markets+liquidity pools
 
 UniswapV4sdk:
 swap 
